@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<f:view contentType="text/html">
+	
+				<h:head>
+				
+					<f:facet name="first">
+		
+						<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+						<meta http-equiv="X-UA-Compatible" content="EmulateIE8" />
+			
+			
+					</f:facet>
+					
+					
+				</h:head>
+	
+	
+	<h:body style="background:cyan">
+	<h1>Set a Alarm by Selecting hours and minutes</h1>
+	
+			<h:form id="form1" enctype="multipart/form-data">
+   
+    
+    <h:panelGrid columns="1" style="margin-bottom: 10px">
+    	<h3 style="margin-top: 0">Hours</h3>
+        <p:inputText id="txt1" value="#{FrameA.ihh}" />
+        <br/>
+        <p:slider for="txt1" minValue="0" maxValue="12" step="1" />
+    	<br/>
+   		
+    	<h3 style="margin-top: 0">Minutes</h3>
+        <p:inputText id="txt2" value="#{FrameA.imm}" />
+        <br/>
+        <p:slider for="txt2" minValue="0" maxValue="60" step="1" />
+    	<br/>
+    	<h:outputLabel for="console" value="set:" style="font-weight:bold"/>
+        <h:selectOneMenu id="console" value="#{FrameA.am}" style="width:125px">
+            <f:selectItem itemLabel="AM" itemValue="" />
+            <f:selectItem itemLabel="PM" itemValue="Xbox One" /><br/> 
+        </h:selectOneMenu>
+        <br/><br/>
+ 		
+		<p:commandButton value="Submit" action="#{FrameA.alarm}" update="form1" />
+		<br/> <br/>
+        <h:selectOneMenu id="console1" value="#{FrameA.path12}" style="width:125px">
+		        <f:selectItem itemLabel="select file" itemValue="" />
+		        <f:selectItems value="#{FrameA.pathlist}"></f:selectItems>
+    	</h:selectOneMenu>	
+    	<p:commandButton value="Speak 2"  action="#{FrameA.chk}" styleClass="ui-priority-primary" update="form1"/>
+   		<p:commandButton value="Go to Audio page"  action="Frame2.xhtml?faces-redirect=true" styleClass="ui-priority-primary" update="form1"/>
+    </h:panelGrid>
+ 
+    
+</h:form>
+           
+       
+
+	</h:body>
+
+	
+	</f:view>
+
+</html>
