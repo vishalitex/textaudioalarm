@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<f:view contentType="text/html">
+	
+				<h:head>
+				
+					<f:facet name="first">
+		
+						<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+						<meta http-equiv="X-UA-Compatible" content="EmulateIE8" />
+			
+			
+					</f:facet>
+					
+					
+				</h:head>
+	
+	
+	<h:body style="background:cyan">
+	
+			<h:form id="form1" enctype="multipart/form-data" >
+			        <h3 style="margin-top: 0">Text Box</h3>
+    				<p>Input text to speech</p>
+   				    <p:inputTextarea rows="10" cols="50" value="#{Frame2.text}" />
+   				    <br/> <br/>
+   				     
+                   <p:commandButton value="Speak"  action="#{Frame2.speak}" styleClass="ui-priority-primary" update="form1"/>
+   				    <br/> <br/>
+   				    
+                   <p:commandButton value="Save "  action="#{Frame2.test}" update="form1"/>
+                   <br/> <br/>
+                 
+   				   <h:outputLabel value="List:" style="font-weight:bold"/>
+        
+       			   <h:selectOneMenu id="console1" value="#{Frame2.path12}" style="width:125px">
+			            <f:selectItem itemLabel="select file" itemValue="" />
+			            <f:selectItems value="#{FrameA.pathlist}"></f:selectItems>
+        		   </h:selectOneMenu>	 
+        		   <p:commandButton value="Speak 1"  action="#{Frame2.readData}" styleClass="ui-priority-primary" update="form1"/>
+   				   <br/> <br/>
+   				   <p:commandButton value="Go to alarm page"  action="frame3.xhtml?faces-redirect=true" styleClass="ui-priority-primary" update="form1"/>
+                    			
+	    	</h:form>
+	
+	</h:body>
+	
+	
+	</f:view>
+
+</html>
